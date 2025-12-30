@@ -161,8 +161,8 @@ services:
             file: docker-compose.base.yml
             service: proxy
         ports:
-            - '80:80'
-            - '443:443'
+            - '680:80'
+            - '6443:443'
         volumes:
             - caddy-data:/data
             - caddy-config:/config
@@ -226,7 +226,7 @@ services:
             file: docker-compose.base.yml
             service: temporal-ui
         ports:
-            - 8081:8080
+            # - 8081:8080
         depends_on:
             temporal:
                 condition: service_started
