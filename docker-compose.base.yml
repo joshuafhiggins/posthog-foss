@@ -143,7 +143,7 @@ services:
             - --advertise-kafka-addr internal://kafka:9092,external://localhost:19092
             - --pandaproxy-addr internal://0.0.0.0:8082,external://0.0.0.0:18082
             - --advertise-pandaproxy-addr internal://kafka:8082,external://localhost:18082
-            - --schema-registry-addr internal://0.0.0.0:8081,external://0.0.0.0:18081
+            - --schema-registry-addr internal://0.0.0.0:8681,external://0.0.0.0:18081
             - --rpc-addr kafka:33145
             - --advertise-rpc-addr kafka:33145
             - --mode dev-container
@@ -444,7 +444,7 @@ services:
             - TEMPORAL_CODEC_ENDPOINT=http://localhost:8000
         image: temporalio/ui:2.31.2
         ports:
-            # - 8081:8080
+            - 8681:8080
     temporal-django-worker:
         <<: *worker
         command: ./bin/temporal-django-worker
